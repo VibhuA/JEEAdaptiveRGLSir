@@ -12,7 +12,10 @@ cwd = os.getcwd()
 st.write("### Current Working Directory:")
 st.code(cwd)
 
-
+try:
+    del excel_name
+except: 
+    a=1
 # --- STEP 0: DATA PREPARATION ---
 excel_name = "JEE Matewknhfiuwhghs.csv"
 
