@@ -6,7 +6,6 @@ import os
 
 # --- STEP 0: DATA PREPARATION ---
 excel_name = "JEE Maths.csv"
-
 @st.cache_data
 def load_data():
     if not os.path.exists(excel_name):
