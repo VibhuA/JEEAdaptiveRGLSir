@@ -56,7 +56,7 @@ def handle_submit(choice, final_time):
     st.session_state.results_history.append({
         'num': st.session_state.q_count,
         'full_question': q['question'],
-        'sol_img': q['solution'], #q.get('solution', ''),
+        'sol_img': q.get('solution', ''),
         'diff': q['difficulty_level'],
         'user_ans': choice,
         'user_val': q[col_map[choice]],
