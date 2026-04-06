@@ -4,21 +4,6 @@ import numpy as np
 import time
 import os
 
-
-# Get the current working directory
-cwd = os.getcwd()
-
-# Display it in the app
-st.write("### Current Working Directory:")
-st.code(cwd)
-
-try:
-    del excel_name
-except: 
-    a=1
-# --- STEP 0: DATA PREPARATION ---
-excel_name = "JEE Matewknhfiuwhghs.csv"
-
 @st.cache_data
 def load_data():
     if not os.path.exists("JEE Maths.csv"):
