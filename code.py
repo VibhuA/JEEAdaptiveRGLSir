@@ -12,6 +12,7 @@ def load_data():
     return pd.read_csv("JEE Maths.csv")
 
 df = load_data()
+st.table(df.head())
 
 # --- STEP 1: INITIALIZE STATE ---
 if 'started' not in st.session_state:
