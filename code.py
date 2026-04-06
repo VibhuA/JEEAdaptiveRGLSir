@@ -138,7 +138,18 @@ elif not st.session_state.test_complete:
     timer_placeholder.markdown(f"### :{t_color}[Time: {elapsed}s]")
 
     st.divider()
-    st.write(f"#### {q['question']}")
+    # 1. Get the image path from your CSV data
+    img_path = q.get('question', '')
+    
+    # 2. Check if the path exists on your computer
+    if img_path and os.path.exists(img_path):
+        st.image(img_path, use_container_width=True)
+    else:
+        # Fallback: if no image is found, show the text (or an error)
+        if q['question'] and str(q['question']) != 'nan':
+            st.write(f"#### {q['question']}")
+        else:
+            st.error(f"Image not found at: {img_path}")
 
     for char in ['A', 'B', 'C', 'D']:
         if st.button(f"{char}: {q[f'option_{char.lower()}']}", use_container_width=True):
