@@ -14,7 +14,7 @@ st.code(cwd)
 
 
 # --- STEP 0: DATA PREPARATION ---
-excel_name = "JEE Maths.csv"
+excel_name = "JEE Matewknhfiuwhghs.csv"
 
 @st.cache_data
 def load_data():
