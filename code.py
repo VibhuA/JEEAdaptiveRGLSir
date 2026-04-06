@@ -213,8 +213,9 @@ else:
                 st.markdown(f"**User Ans:** :{color}[{res['user_val']}] | **Correct:** {res['correct_val']}")
                 
                 # --- NEW: DISPLAY SOLUTION IMAGE ---
-                st.write(f"DEBUG: Looking for file at {os.path.abspath(sol_path)}")
                 sol_path = res.get('sol_img', '')
+                st.write(f"DEBUG: Looking for file at {os.path.abspath(sol_path)}")
+                
                 if sol_path and os.path.exists(sol_path):
                     st.divider()
                     st.success("**Step-by-Step Solution:**")
