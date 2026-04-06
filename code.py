@@ -5,7 +5,7 @@ import time
 import os
 
 # --- STEP 0: DATA PREPARATION ---
-excel_name = "JEE_Maths.csv"
+excel_name = "JEE Maths.csv"
 
 @st.cache_data
 def load_data():
