@@ -209,13 +209,13 @@ else:
                 # Display Question Image
                 if os.path.exists(res['full_question']):
                     st.image(res['full_question'], caption="Question Image")
-                st.image(res['sol_img'])
+                #st.image(res['sol_img'])
                 
                 st.markdown(f"**User Ans:** :{color}[{res['user_val']}] | **Correct:** {res['correct_val']}")
                 
                 # --- NEW: DISPLAY SOLUTION IMAGE ---
                 sol_path = res.get('sol_img', '')
-                st.write(f"DEBUG: Looking for file at {os.path.abspath(sol_path)}")
+                st.write(f"DEBUG: Looking for file at {os.path.abspath(sol_path)} {sol_img}")
                 
                 if sol_path and os.path.exists(sol_path):
                     st.divider()
