@@ -3,7 +3,16 @@ import pandas as pd
 import numpy as np
 import time
 import os
-print(os.getcwd())
+
+
+# Get the current working directory
+cwd = os.getcwd()
+
+# Display it in the app
+st.write("### Current Working Directory:")
+st.code(cwd)
+
+
 # --- STEP 0: DATA PREPARATION ---
 excel_name = "JEE Maths.csv"
 
