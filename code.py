@@ -21,10 +21,10 @@ excel_name = "JEE Matewknhfiuwhghs.csv"
 
 @st.cache_data
 def load_data():
-    if not os.path.exists(excel_name):
+    if not os.path.exists("JEE Maths.csv"):
         st.error(f"File {excel_name} not found! Please ensure it is in the same folder.")
         return pd.DataFrame()
-    return pd.read_csv(excel_name)
+    return pd.read_csv("JEE Maths.csv")
 
 df = load_data()
 
