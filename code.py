@@ -7,7 +7,7 @@ st.set_page_config(page_title="HigherMarks Dashboard", layout="centered")
 st.title("Question Analytics")
 
 # Define the path to your image
-image_path = "assets/2.png"
+image_path = "Assets/Q2.png"
 
 # Check if the file exists to avoid app crashes
 if os.path.exists(image_path):
