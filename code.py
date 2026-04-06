@@ -6,6 +6,7 @@ import os
 
 # --- STEP 0: DATA PREPARATION ---
 excel_name = "JEE Maths.csv"
+
 @st.cache_data
 def load_data():
     if not os.path.exists(excel_name):
@@ -84,7 +85,7 @@ def handle_submit(choice, final_time):
 
 # LANDING PAGE
 if not st.session_state.started:
-    st.title("CUET Mathematics Diagnostic")
+    st.title("JEE Mathematics PYQ")
     st.subheader("Adaptive Trig Diagnostic - Full Analytics Suite")
     
     st.markdown("""
