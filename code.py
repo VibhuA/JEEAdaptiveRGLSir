@@ -215,7 +215,7 @@ else:
                 
                 # --- NEW: DISPLAY SOLUTION IMAGE ---
                 sol_path = res.get('sol_img', '')
-                st.write(f"DEBUG: Looking for file at {os.path.abspath(res['full_question'])}")
+                st.write(f"DEBUG: Looking for file at {os.path.abspath(sol_path)}")
                 
                 if sol_path and os.path.exists(sol_path):
                     st.divider()
