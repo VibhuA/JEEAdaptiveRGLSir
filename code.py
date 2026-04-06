@@ -56,6 +56,7 @@ def handle_submit(choice, final_time):
     st.session_state.results_history.append({
         'num': st.session_state.q_count,
         'full_question': q['question'],
+        'sol_img': q.get('solution', ''),
         'diff': q['difficulty_level'],
         'user_ans': choice,
         'user_val': q[col_map[choice]],
@@ -203,9 +204,23 @@ else:
         if show_acc and show_time and show_gs:
             color = "green" if res['is_correct'] else "red"
             status = "✅" if res['is_correct'] else "❌"
+        
             with st.expander(f"{status} Q#{res['num']} | Time: {res['time']}s | {res['error_tag']}"):
-                st.write(f"**Question:** {res['full_question']}")
+                # Display Question Image
+                if os.path.exists(res['full_question']):
+                    st.image(res['full_question'], caption="Question Image")
+                
                 st.markdown(f"**User Ans:** :{color}[{res['user_val']}] | **Correct:** {res['correct_val']}")
+                
+                # --- NEW: DISPLAY SOLUTION IMAGE ---
+                sol_path = res.get('sol_img', '')
+                if sol_path and os.path.exists(sol_path):
+                    st.divider()
+                    st.success("**Step-by-Step Solution:**")
+                    st.image(sol_path, use_container_width=True)
+                else:
+                    st.info("No solution image available.")
+                
                 if res['is_overtime']: st.warning("Note: Overtime response.")
                 if res['is_guess']: st.error("Note: Tagged as Rapid Guess.")
 
