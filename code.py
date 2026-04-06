@@ -12,7 +12,7 @@ def load_data():
     return pd.read_csv("JEE Maths.csv")
 
 df = load_data()
-st.table(df.head())
+
 
 # --- STEP 1: INITIALIZE STATE ---
 if 'started' not in st.session_state:
@@ -216,7 +216,7 @@ else:
                 
                 # --- NEW: DISPLAY SOLUTION IMAGE ---
                 sol_path = res.get('sol_img', '')
-                st.write(f"DEBUG: Looking for file at {os.path.abspath(sol_path)}")
+
                 
                 if sol_path and os.path.exists(sol_path):
                     st.divider()
